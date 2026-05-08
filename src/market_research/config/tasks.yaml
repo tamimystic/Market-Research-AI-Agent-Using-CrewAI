@@ -1,0 +1,170 @@
+market_research_task:
+  description: >
+    Research the topic "{topic}" and collect detailed market intelligence.
+
+    Research:
+    - market size
+    - CAGR
+    - investment trends
+    - regional market growth
+    - customer sentiment
+    - AI adoption
+    - opportunities
+    - risks
+    - competitor landscape
+    - future trends
+
+  expected_output: >
+    Detailed market intelligence findings.
+
+  agent: research_agent
+
+
+market_analysis_task:
+  description: >
+    Analyze the researched market data for "{topic}".
+
+    Generate:
+    - SWOT analysis
+    - strategic opportunities
+    - market forecast
+    - customer insights
+    - competitor intelligence
+    - regional analysis
+    - investment analysis
+    - business recommendations
+
+  expected_output: >
+    Strategic market intelligence analysis.
+
+  agent: analysis_agent
+
+  context:
+    - market_research_task
+
+
+final_report_task:
+  description: >
+    Generate a professional AI-powered market intelligence report
+    for "{topic}".
+
+    Return ONLY valid JSON.
+
+    JSON structure:
+
+    {
+      "executive_report": "",
+      "analytics": {
+        "topic": "",
+        "market_size": "",
+        "cagr": "",
+        "ai_adoption": "",
+        "investment_trend": "",
+        "risk_level": "",
+
+        "market_forecast": {
+          "2023": 0,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0,
+          "2027": 0
+        },
+
+        "regional_distribution": {
+          "North America": 0,
+          "Europe": 0,
+          "Asia Pacific": 0,
+          "Middle East": 0
+        },
+
+        "competitors": [
+          {
+            "name": "",
+            "innovation_score": 0,
+            "market_share": 0
+          }
+        ],
+
+        "customer_sentiment": {
+          "Positive": 0,
+          "Neutral": 0,
+          "Negative": 0
+        },
+
+        "swot": {
+          "strength": 0,
+          "weakness": 0,
+          "opportunity": 0,
+          "threat": 0
+        },
+
+        "executive_insights": [
+          "",
+          "",
+          ""
+        ],
+
+        "recommendations": [
+          "",
+          "",
+          ""
+        ]
+      }
+    }
+
+    Requirements for executive_report:
+
+    - Write around 700+ words
+    - Write in highly professional business language
+    - Write like a senior market intelligence researcher
+    - Use detailed section-wise points
+    - Use analytical business tone
+    - Make the writing highly humanized
+    - Avoid robotic AI writing style
+    - Make it suitable for:
+      - LinkedIn posts
+      - investor presentations
+      - business intelligence reports
+      - executive summaries
+
+    Structure the report professionally:
+
+    1. Executive Summary
+    2. Current Market Scenario
+    3. Industry Growth Analysis
+    4. Regional Market Intelligence
+    5. Competitor Landscape
+    6. Customer & Consumer Insights
+    7. SWOT Analysis
+    8. Investment & Innovation Trends
+    9. Future Opportunities
+    10. Strategic Recommendations
+    11. Final Conclusion
+
+    Writing Style Rules:
+
+    - Use professional paragraph-style points
+    - Each section should contain analytical insights
+    - Use executive-level business language
+    - Avoid markdown symbols
+    - Avoid hashtags
+    - Avoid bullet symbols
+    - Avoid short generic sentences
+    - Make it feel like a premium research report
+    - Ensure smooth readability for professional audiences
+
+    Important:
+    - Return ONLY valid JSON
+    - No markdown
+    - No explanation
+    - No extra text
+
+  expected_output: >
+    Humanized executive market intelligence report step by step point wise
+    with structured analytics data.
+
+  agent: report_writer_agent
+
+  context:
+    - market_research_task
+    - market_analysis_task
