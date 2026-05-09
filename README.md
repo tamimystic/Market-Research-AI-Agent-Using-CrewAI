@@ -329,6 +329,67 @@ http://localhost:8501
 
 ---
 
+---
+
+## If you want to Create Project on your System
+
+* Follow This Documentation `https://docs.crewai.com/en/installation`
+
+
+### Virtual Environment Setup
+
+```bash
+crewai create crew your_project_name
+````
+
+Move into the project directory:
+
+```bash
+cd your_project_name
+```
+
+Deactivate Conda base environment (if active):
+
+```bash
+conda deactivate
+```
+
+Activate the project virtual environment.
+
+### Windows PowerShell
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+### Git Bash
+
+```bash
+source .venv/Scripts/activate
+```
+
+Verify Python path:
+
+### PowerShell
+
+```powershell
+where python
+```
+
+### Git Bash
+
+```bash
+which python
+```
+
+The output should point to:
+
+```text
+project_folder/.venv/Scripts/python.exe
+```
+
+---
+
 ## Deployment
 
 ### Streamlit Community Cloud
